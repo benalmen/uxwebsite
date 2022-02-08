@@ -1,6 +1,5 @@
-# benalmenuxportfolio
-professional website
+# benalmen
+Professional UX Design Portfolio
 
-no bootstrap
 html/css/js
-all original photos
+bootstrap
