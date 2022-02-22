@@ -6,152 +6,211 @@
   scroll-behavior: smooth;
 }
 
-body {
-  background-color: white;
-  color: black;
-}
-.default {
-  background-color: white;
-  color: black;
-
-}
-.inverse {
-  background-color: black;
-  color: white;
-}
-
 /* ******** */
 /* Text Styles */
 /* ******** */
 
 h1 {
-  font-size: 3rem;
+  font-size: 3.0em;
   font-weight: 300;
-  font-family: 'EB Garamond', serif;
+  font-family: serif;
   letter-spacing: .15em;
 }
 h2 {
-  font-size: 1.2rem;
+  font-size: 1.8em;
   font-weight: 300;
-  font-family: 'EB Garamond', serif;
+  font-family: serif;
   font-style: italic;
   letter-spacing: .3em;
-  text-transform: lowercase;
 }
 h3 {
-  font-size: 1rem;
-  font-weight: 300;
-  font-style: italic;
-  font-family: 'EB Garamond', serif;
+  font-size: 2em;
+  font-weight: 500;
+  font-family: serif;
 }
 p {
-  font-size: 1rem;
+  font-size: 1.4em;
   font-weight: 300;
-  font-family: 'EB Garamond', serif;
+  font-family: serif;
 }
 
 /* "FIXED" ELEMENTS */
 
-.fixed {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100vw;
-}
-.siteheader {
+
+.main {
   display: flex;
   flex-direction: column;
-  position: absolute;
-  bottom: 50vh;
-  right: 30vw;
-  height: -100px;
-  text-align: right;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 100vh;
+  /* border: inset 5px orange; */
+}
+.mainlight {
+  background-color: white;
+  color: black;
+}
+.maindark {
+  background-color: black;
+  color: white;
+}
+.space1 {
+  display: block;
+  height: 30%;
+}
+.space2 {
+  display: block;
+  height: 25px;
+}
+.space3 {
+  display: block;
+  height: 10%;
 }
 #name {
-  font-size: 300%;
-  letter-spacing: .5rem;
+  /* border: inset 5px yellow; */
+  text-align: right;
+  padding-right: 20px;
 }
-
-/* // ICON LIST  */
-
 #jobtitle {
-  font-size: 150%;
-  letter-spacing: .3em;
-  padding-right: .2vw;
-}
-#linkgroup {
-  display: flex;
-  justify-content: flex-end;
-  line-height: 3rem;
-  letter-spacing: .3rem;
-  padding-right: .3vw;
-  list-style: none;
-}
-li {
-  display: block;
-  padding: 0 5px;
-}
-.darkmode {
-  cursor: pointer;
-}
-.darkswitch {
-  display: block;
-  margin: 0;
-}
-.lightswitch {
-  display: none;
-}
-#linkedin {
-  cursor: pointer;
-}
-#download {
-  cursor: pointer;
-}
-#email {
-  cursor: pointer;
+  /* border: inset 5px green; */
+  text-align: right;
+  margin-top: -30px;
+  padding-right: 10px;
 }
 
 /* NAVIGATION */
 
 nav {
-  position: absolute;
+  /* border: inset 5px red; */
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  top: 50vh;
-  right: 0;
-  width: 100vw;
-  height: 45vh;
 }
 .btn {
-  height: 4.5vh;
-  max-height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  height: 40px;
   margin: 0 0 15px 0;
   border-radius: 25px 0 0 25px;
   padding: 5px 10px;
   cursor: pointer;
 }
+.btnlight {
+  border: 1px white;
+  background-color: black;
+  color: white;
+}
+.btndark {
+  border: 1px black;
+  background-color: white;
+  color: black;
+}
+.btnicon {
+  font-size: 2em;
+  padding-left: 5px;
+}
 .btntext {
-  font-size: 3vw;
+  font-size: 2.7em;
+  padding: 30px 10px 0px 15px;
+  text-align: right;
 }
-.btnwork {
-  float: right;
-  width: 29vw;
+.btnworklight {
+  width: 225px;
 }
-.btnbio {
-  float: right;
-  width: 29vw;
+.btnworklight:hover {
+  color: khaki;
+  background-color: black;
 }
-.btncontact {
-  float: right;
-  width: 29vw;
+.btnbiolight {
+  width: 225px;
+}
+.btnbiolight:hover {
+  color: lightsalmon;
+  background-color: black;
+}
+.btncontactlight {
+  width: 225px;
+}
+.btncontactlight:hover {
+  color: lightcoral;
+  background-color: black;
+}
+
+.btnworkdark {
+  width: 225px;
+}
+.btnworkdark:hover {
+  color: black;
+  background-color: seagreen;
+}
+.btnbiodark {
+  width: 225px;
+}
+.btnbiodark:hover {
+  color: black;
+  background-color: royalblue;
+}
+.btncontactdark {
+  width: 225px;
+}
+.btncontactdark:hover {
+  color: black;
+  background-color: slateblue;
+}
+
+
+/* // ICON LIST  */
+
+#links {
+  /* border: inset 5px blue; */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 180px;
+  margin: 20px 20px 10px 0px;
+  list-style: none;
+  font-size: 2em;
+}
+.darkmode {
+  cursor: pointer;
+  transition: transform .5s ease-in-out;
+}
+.darkmode:hover {
+  transform: rotate(180deg);
+}
+.darkswitch {
+  display: block;
+  background-color: white;
+  color: black;
+}
+.lightswitch {
+  display: none;
+  background-color: black;
+  color: white;
+}
+.linkedinlight {
+  cursor: pointer;
+  background-color: white;
+  color: black;
+}
+.linkedindark {
+  cursor: pointer;
+  background-color: black;
+  color: white;
+}
+.linkedinlight:hover {
+  color: #2D65BC;
+}
+.linkedindark:hover {
+  color: #2D65BC;
 }
 
 
 /* MODAL FRAME */
 
-.frame {
+/* .frame {
   position: fixed;
   bottom: -100vh;
   left: 0;
@@ -213,4 +272,4 @@ nav {
   width: calc(100% - 100px);
   height: calc(100% - 100px);
   background-color: blue;
-}
+} */

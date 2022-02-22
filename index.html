@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=0.41, maximum-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <!-- JavaScript Bundle with Popper -->      
+    <script src="https://kit.fontawesome.com/13ff722376.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">    
     <link href="css/index.css" rel="stylesheet" type="text/css">    
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
@@ -17,29 +16,38 @@
 
 <!-- Fixed Homepage Elements -->
 
-<section class="fixed">    
-    <div class="siteheader">
+<section class="main mainlight">
+    <div class="space1"></div>   
+    
+    <div class="title">
         <h1 id="name">Ben Almen</h1>
         <h2 id="jobtitle">ux designer</h2>
-        <ul id="linkgroup">
-            <li class="darkmode darkswitch default"><i title="Toggle Dark Mode" class="fas fa-adjust"></i></li>
-            <li class="darkmode lightswitch default"><i title="Toggle Dark Mode" class="fas fa-adjust"></i></li>
-            <li><a id="linkedin" title="Open LinkedIn in New Tab" href="https://www.linkedin.com/in/ben-almen/" target="_blank"><i class="fab fa-linkedin default"></i></a></li>
-            <li><a id="download" title="Download Portfolio PDF" href="/sources/BenAlmenCaseStudies.pdf" download><i class="fas fa-file-download default"></i></a></li>
-            <li><a id="email" title="Send an Email" href="mailto:ux@benalmen.com"><i class="fas fa-envelope default"></i></a></li>
-        </ul>
     </div>
 
+    <div class="space2"></div> 
+
+    <div>
     <nav>
-        <div class="inverse btn btnwork"><h4 class="btntext"><i class="fas fa-drafting-compass"></i>work</h4></div>
-        <div class="inverse btn btnbio"><h3 class="btntext">bio</h3></div>
-        <div class="inverse btn btncontact"><h3 class="btntext">contact</h3></div>
+        <div class="btn btnlight btnwork btnworklight"><i class="btnicon fas fa-drafting-compass"></i><h3 class="btntext">work</h3></div>
+        <div class="btn btnlight btnbio btnbiolight"><i class="btnicon fas fa-user"></i><h3 class="btntext">bio</h3></div>
+        <div class="btn btnlight btncontact btncontactlight"><i class="btnicon fas fa-comments"></i><h3 class="btntext">contact</h3></div>
     </nav>
+    </div>
+
+    <div class="space3"></div> 
+
+    <div>
+    <ul id="links">
+        <li><a title="Open LinkedIn in New Tab" href="https://www.linkedin.com/in/ben-almen/" target="_blank"><i class="linkedin linkedinlight fab fa-linkedin"></i></a></li>
+        <li class="darkmode darkswitch"><i title="Toggle Dark Mode" class="fas fa-adjust"></i></li>
+        <li class="darkmode lightswitch"><i title="Toggle Dark Mode" class="fas fa-adjust"></i></li>
+    </ul>
+    </div>
 </section>
 
 <!-- Page Modals -->
 
-<section class="pagemodals">
+<!-- <section class="pagemodals">
 
     <div class="frame workframe">
         <div class="inverse modal workmodal">
@@ -62,7 +70,7 @@
         </div>
     </div>
 
-</section>
+</section> -->
 
 
 
@@ -70,7 +78,6 @@
 </body>
 
 
-<script src="https://kit.fontawesome.com/13ff722376.js" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="js/index.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
@@ -78,64 +85,3 @@
 
 
 </html>
-
-
-
-<!-- 
-<div class="navHoverCheck"></div>
-<nav>
-    <h2 id="navName">Ben Almen</h2>
-    <ul class="navLinks navLinksUp">
-        <li><h2 class="buttonProjects navButton">Projects</h2></li>
-        <li><h2 class="buttonAbout navButton">About</h2></li>
-        <li><h2 class="buttonContact navButton">Contact</h2></li>
-    </ul>
-</nav>
-
-
-
-
-<section class="main">
-
-
-
-    <section class="hero">
-            <h1 class="heroName">Ben Almen</h1>
-            <img class="selfie" src="images/portrait.jpeg"></img>
-            <h3 class="job"></h3>
-    </section>
-
-    <div class="spacer"></div>
-
-
-    <section id="projects">
-        <div class="cardBG">
-            <div class="card">
-                <h1 id="projectsName" class="name">Projects</h1>
-                <div class="textBox">
-                    <h4 class="titles">Passion-driven</h4>
-                    <p>Writer, artist, musician, linguaphile, chromatophile, bibliophile, flexible perfectionist, avid naturalist, mindfulness enthusiast...<br></p>
-                    <h4 class="titles">Transitive inter-disciplinary experience</h4>
-                    <p>...all together - a User Experience Designer attentive to details and fortified by extensive studies in humanities and natural systems.<br></p>
-                    <h4 class="titles">Builds on mutual benefit</h4>
-                    <p>My mission is to design products that connect organizations and individuals through respect, loyalty, and genuine good feeling.<br></p>
-                    <h4 class="titles">Skilled listener, uses powers for good</h4>
-                    <p>I specialize in friendly user research and abstract empirical observation, translating emotion and imagination into holistically-balanced products.<br></p>
-                </div>
-                <div id="revealProjects" class="revealButton"></div>
-            </div>
-            <div id="ProjectsGone"></div>
-        </div>
-    </section>
-
-    <div class="spacer"></div>
-    <div class="spacer"></div>
-
-<footer>
-    <ul id="footLinks">
-        <li class="footSpacer"></li>
-        <li><a class="footButton" href="">Download Portfolio</a></li>
-        <li><a href="https://www.linkedin.com/in/ben-almen/" target="_blank"><i class="fab fa-linkedin fa-2x footIcon"></i></a></li>
-    </ul>
-</footer> -->
-
