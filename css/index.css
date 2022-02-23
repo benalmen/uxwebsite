@@ -96,6 +96,7 @@ nav {
   padding: 5px 10px;
   cursor: pointer;
 }
+
 .btnlight {
   border: 1px white;
   background-color: black;
@@ -106,6 +107,7 @@ nav {
   background-color: white;
   color: black;
 }
+
 .btnicon {
   font-size: 2em;
   padding-left: 5px;
@@ -115,6 +117,7 @@ nav {
   padding: 30px 10px 0px 15px;
   text-align: right;
 }
+
 .btnworklight {
   width: 225px;
 }
@@ -122,6 +125,11 @@ nav {
   color: khaki;
   background-color: black;
 }
+.btnworklightclick {
+  color: khaki;
+  background-color: black;
+}
+
 .btnbiolight {
   width: 225px;
 }
@@ -129,10 +137,19 @@ nav {
   color: lightsalmon;
   background-color: black;
 }
+.btnbiolightclick {
+  color: lightsalmon;
+  background-color: black;
+}
+
 .btncontactlight {
   width: 225px;
 }
 .btncontactlight:hover {
+  color: lightcoral;
+  background-color: black;
+}
+.btncontactlightclick {
   color: lightcoral;
   background-color: black;
 }
@@ -144,6 +161,11 @@ nav {
   color: black;
   background-color: seagreen;
 }
+.btnworkdarkclick {
+  color: black;
+  background-color: seagreen;
+}
+
 .btnbiodark {
   width: 225px;
 }
@@ -151,10 +173,19 @@ nav {
   color: black;
   background-color: royalblue;
 }
+.btnbiodarkclick {
+  color: black;
+  background-color: royalblue;
+}
+
 .btncontactdark {
   width: 225px;
 }
 .btncontactdark:hover {
+  color: black;
+  background-color: slateblue;
+}
+.btncontactdarkclick {
   color: black;
   background-color: slateblue;
 }

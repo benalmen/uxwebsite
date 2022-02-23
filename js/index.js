@@ -2,14 +2,8 @@
 
 $(document).ready(function() {
 
-var modalopened = "block";
-var modalclosed = "none";
-
-var white = "white";
-var black = "black";
-var khaki = "khaki";
-var salmon = "lightsalmon";
-var coral = "lightcoral";
+var block = "block";
+var none = "none";
 
 var btnwidthstart = "225px";
 var btnwidthclosed = "58px";
@@ -27,6 +21,8 @@ var space2open = "45%";
 var space3open = "0%";
 
 // ***DARK MODE***
+
+// function library
 
 function godark() {
     $(".lightswitch").fadeIn(0);
@@ -52,6 +48,8 @@ function golight() {
     $(".btncontactdark").toggleClass("btncontactlight btncontactdark");
 };
 
+// action switch
+
 $(".darkswitch").click(godark);
 $(".lightswitch").click(golight);
 
@@ -59,7 +57,7 @@ $(".lightswitch").click(golight);
 
 // ***MENU ANIMATIONS***
 
-// function library
+// **function library
 
 function btnstostart() {
     $(".space1").animate({height: space1start},buttonspeed,"linear");
@@ -70,6 +68,24 @@ function btnstostart() {
     $(".btncontact").animate({width: btnwidthstart},buttonspeed,"linear");
 };
 
+// work btn
+
+function btnworkactive() {
+    if ($(".darkswitch").css("display") == block) {
+        $(".btnwork").addClass("btnworklightclick");
+    }
+    else {
+        $(".btnwork").addClass("btnworkdarkclick");
+    }
+};
+function btnworkcolorreset() {
+    if ($(".darkswitch").css("display") == block) {
+        $(".btnwork").removeClass("btnworklightclick");
+    }
+    else {
+        $(".btnwork").removeClass("btnworkdarkclick");
+    }
+};
 function btnstoworkopen() {
     $(".space1").animate({height: space1open},buttonspeed,"linear");
     $(".space3").animate({height: space3open},buttonspeed,"linear");
@@ -79,6 +95,24 @@ function btnstoworkopen() {
     $(".btncontact").animate({width: btnwidthclosed},buttonspeed,"linear");
 };
 
+// bio btn
+
+function btnbioactive() {
+    if ($(".darkswitch").css("display") == block) {
+        $(".btnbio").addClass("btnbiolightclick");
+    }
+    else {
+        $(".btnbio").addClass("btnbiodarkclick");
+    }
+};
+function btnbiocolorreset() {
+    if ($(".darkswitch").css("display") == block) {
+        $(".btnbio").removeClass("btnbiolightclick");
+    }
+    else {
+        $(".btnbio").removeClass("btnbiodarkclick");
+    }
+};
 function btnstobioopen() {
     $(".space1").animate({height: space1open},buttonspeed,"linear");
     $(".space3").animate({height: space3open},buttonspeed,"linear");
@@ -88,6 +122,23 @@ function btnstobioopen() {
     $(".btncontact").animate({width: btnwidthclosed},buttonspeed,"linear");
 };
 
+// contact btn
+function btncontactactive() {
+    if ($(".darkswitch").css("display") == block) {
+        $(".btncontact").addClass("btncontactlightclick");
+    }
+    else {
+        $(".btncontact").addClass("btncontactdarkclick");
+    }
+};
+function btncontactcolorreset() {
+    if ($(".darkswitch").css("display") == block) {
+        $(".btncontact").removeClass("btncontactlightclick");
+    }
+    else {
+        $(".btncontact").removeClass("btncontactdarkclick");
+    }
+};
 function btnstocontactopen() {
     $(".space1").animate({height: space1open},buttonspeed,"linear");
     $(".space3").animate({height: space3open},buttonspeed,"linear");
@@ -98,32 +149,60 @@ function btnstocontactopen() {
 };
 
 
+
+
+
+function colorreturn() {
+    if ($(".darkswitch").css("display") == block) {
+        $(".btnwork").removeClass("btnworklightclick");
+        $(".btnbio").removeClass("btnbiolightclick");
+        $(".btncontact").removeClass("btncontactlightclick");
+    }
+    else {
+        $(".btnwork").removeClass("btnworkdarkclick");
+        $(".btnbio").removeClass("btnbiodarkclick");
+        $(".btncontact").removeClass("btncontactdarkclick");
+    }
+}
+
+
+
+
+
+
+
 // menu events
 
 $(".btnwork").click(function() {
     if ($(".btnwork").css("width") == btnwidthstart || $(".btnwork").css("width") == btnwidthclosed) {
         btnstoworkopen();
+        btnworkactive();
     }
     else {
         btnstostart();
+        btnworkcolorreset();
     }
 });
 
 $(".btnbio").click(function() {
     if ($(".btnbio").css("width") == btnwidthstart || $(".btnbio").css("width") == btnwidthclosed) {
         btnstobioopen();
+        btnbioactive();
     }
     else {
         btnstostart();
+        btnbiocolorreset();
     }
 });
 
 $(".btncontact").click(function() {
     if ($(".btncontact").css("width") == btnwidthstart || $(".btncontact").css("width") == btnwidthclosed) {
         btnstocontactopen();
+        btncontactactive();
     }
     else {
         btnstostart();
+        btncontactcolorreset();
     }
 });
 
