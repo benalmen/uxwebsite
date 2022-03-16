@@ -14,27 +14,31 @@
 
 <body>
 
-<!-- Fixed Homepage Elements -->
+<!-- Title Elements -->
 
 <section class="main mainlight">
     <div class="space1"></div>   
     
     <div class="title">
-        <h1 id="name">Ben Almen</h1>
-        <h2 id="jobtitle">ux designer</h2>
+        <h1 class="name">Ben Almen</h1>
+        <h2 class="jobtitle">ux designer</h2>
     </div>
 
     <div class="space2"></div> 
 
+<!-- Navigation -->
+
     <div>
     <nav>
-        <div class="btn btnlight btnwork btnworklight"><i class="btnicon fas fa-drafting-compass"></i><h3 class="btntext">work</h3></div>
-        <div class="btn btnlight btnbio btnbiolight"><i class="btnicon fas fa-user"></i><h3 class="btntext">bio</h3></div>
-        <div class="btn btnlight btncontact btncontactlight"><i class="btnicon fas fa-comments"></i><h3 class="btntext">contact</h3></div>
+        <div class="btn btnwork btnworklight"><i class="btnicon fas fa-drafting-compass"></i><h3 class="btntext workbtntext">work</h3></div>
+        <div class="btn btnbio btnbiolight"><i class="btnicon fas fa-user"></i><h3 class="btntext biobtntext">bio</h3></div>
+        <div class="btn btncontact btncontactlight"><i class="btnicon fas fa-comments"></i><h3 class="btntext contactbtntext">contact</h3></div>
     </nav>
     </div>
 
     <div class="space3"></div> 
+
+<!-- Links -->
 
     <div>
     <ul id="links">
@@ -49,26 +53,29 @@
 
 <section class="pagemodals">
 
-    <div class="frame workframe">
-        <div class="inverse modal workmodal">
-            <span class="close workclose"><i class="fas fa-caret-down"></i></span>
-            <div class="content workcontent"></div>
+    <div class="workframe workframelight">
+        <div class="modaltitle worktitlelight"><h3>work</h3></div>
+        <div class="workclose workcloselight"><i class="fas fa-caret-down"></i></div>
+        <div class="workmodal workmodallight">
+            <div class="workcontent"></div>
         </div>
     </div>
 
-    <!-- <div class="frame bioframe">
-        <div class="inverse modal biomodal">
-            <span class="inverse close bioclose"><i class="fas fa-caret-down"></i></span>
-            <div class="content biocontent"></div>
+    <div class="bioframe bioframelight">
+        <div class="modaltitle biotitlelight"><h3>bio</h3></div>
+        <div class="bioclose biocloselight"><i class="fas fa-caret-down"></i></div>
+        <div class="biomodal biomodallight">
+            <div class="workcontent"></div>
         </div>
     </div>
 
-    <div class="frame contactframe">
-        <div class="inverse modal contactmodal">
-            <span class="close contactclose"><i class="fas fa-caret-down"></i></span>
-            <div class="content contactcontent"></div>
+    <div class="contactframe contactframelight">
+        <div class="modaltitle contacttitlelight"><h3>contact</h3></div>
+        <div class="contactclose contactcloselight"><i class="fas fa-caret-down"></i></div>
+        <div class="contactmodal contactmodallight">
+            <div class="contactcontent"></div>
         </div>
-    </div> -->
+    </div>
 
 </section>
 

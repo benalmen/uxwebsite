@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
+  overflow: hidden;
 }
 
 /* ******** */
@@ -34,8 +35,9 @@ p {
   font-family: serif;
 }
 
-/* "FIXED" ELEMENTS */
-
+/* ******** */
+/* TITLE ELEMENTS */
+/* ******** */
 
 .main {
   display: flex;
@@ -43,6 +45,7 @@ p {
   justify-content: space-between;
   align-items: flex-end;
   height: 100vh;
+  z-index: 0;
   /* border: inset 5px orange; */
 }
 .mainlight {
@@ -63,51 +66,45 @@ p {
 }
 .space3 {
   display: block;
-  height: 10%;
+  height: 20%;
 }
-#name {
-  /* border: inset 5px yellow; */
+.name {
+  font-size: 3.0em;
   text-align: right;
   padding-right: 20px;
 }
-#jobtitle {
-  /* border: inset 5px green; */
+.jobtitle {
+  font-size: 1.8em;
   text-align: right;
-  margin-top: -30px;
+  margin-top: -25px;
   padding-right: 10px;
 }
 
+/* ******** */
 /* NAVIGATION */
+/* ******** */
+
+/* ******** */
+/* nav universal */
 
 nav {
-  /* border: inset 5px red; */
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  overflow:hidden;
 }
 .btn {
   display: flex;
   justify-content: space-between;
   align-items: center;
   overflow: hidden;
+  width: 225px;
   height: 40px;
   margin: 0 0 15px 0;
   border-radius: 25px 0 0 25px;
   padding: 5px 10px;
   cursor: pointer;
 }
-
-.btnlight {
-  border: 1px white;
-  background-color: black;
-  color: white;
-}
-.btndark {
-  border: 1px black;
-  background-color: white;
-  color: black;
-}
-
 .btnicon {
   font-size: 2em;
   padding-left: 5px;
@@ -117,9 +114,25 @@ nav {
   padding: 30px 10px 0px 15px;
   text-align: right;
 }
+.workbtntext {
+  margin-right: 0px;
+}
+.biobtntext {
+  margin-right: 0px;
+}
+.contactbtntext {
+  margin-right: 0px;
+}
+
+/* ******** */
+/* nav work button */
+
+/* light */
 
 .btnworklight {
-  width: 225px;
+  border: 1px white;
+  background-color: black;
+  color: white;
 }
 .btnworklight:hover {
   color: khaki;
@@ -130,32 +143,12 @@ nav {
   background-color: black;
 }
 
-.btnbiolight {
-  width: 225px;
-}
-.btnbiolight:hover {
-  color: lightsalmon;
-  background-color: black;
-}
-.btnbiolightclick {
-  color: lightsalmon;
-  background-color: black;
-}
-
-.btncontactlight {
-  width: 225px;
-}
-.btncontactlight:hover {
-  color: lightcoral;
-  background-color: black;
-}
-.btncontactlightclick {
-  color: lightcoral;
-  background-color: black;
-}
+/* dark */
 
 .btnworkdark {
-  width: 225px;
+  border: 1px black;
+  background-color: white;
+  color: black;
 }
 .btnworkdark:hover {
   color: black;
@@ -166,8 +159,31 @@ nav {
   background-color: seagreen;
 }
 
+/* ******** */
+/* nav bio button */
+
+/* light */
+
+.btnbiolight {
+  border: 1px white;
+  background-color: black;
+  color: white;
+}
+.btnbiolight:hover {
+  color: lightsalmon;
+  background-color: black;
+}
+.btnbiolightclick {
+  color: lightsalmon;
+  background-color: black;
+}
+
+/* dark */
+
 .btnbiodark {
-  width: 225px;
+  border: 1px black;
+  background-color: white;
+  color: black;
 }
 .btnbiodark:hover {
   color: black;
@@ -178,8 +194,31 @@ nav {
   background-color: royalblue;
 }
 
+/* ******** */
+/* nav contact button */
+
+/* light */
+
+.btncontactlight {
+  border: 1px white;
+  background-color: black;
+  color: white;
+}
+.btncontactlight:hover {
+  color: lightcoral;
+  background-color: black;
+}
+.btncontactlightclick {
+  color: lightcoral;
+  background-color: black;
+}
+
+/* dark */
+
 .btncontactdark {
-  width: 225px;
+  border: 1px black;
+  background-color: white;
+  color: black;
 }
 .btncontactdark:hover {
   color: black;
@@ -190,11 +229,14 @@ nav {
   background-color: slateblue;
 }
 
+/* ******** */
+/* LINKS */
+/* ******** */
 
-/* // ICON LIST  */
+/* ******** */
+/* links universal */
 
 #links {
-  /* border: inset 5px blue; */
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -204,23 +246,10 @@ nav {
   list-style: none;
   font-size: 2em;
 }
-.darkmode {
-  cursor: pointer;
-  transition: transform .5s ease-in-out;
-}
-.darkmode:hover {
-  transform: rotate(180deg);
-}
-.darkswitch {
-  display: block;
-  background-color: white;
-  color: black;
-}
-.lightswitch {
-  display: none;
-  background-color: black;
-  color: white;
-}
+
+/* ******** */
+/* linkedin link */
+
 .linkedinlight {
   cursor: pointer;
   background-color: white;
@@ -238,69 +267,283 @@ nav {
   color: #2D65BC;
 }
 
+/* ******** */
+/* darkmode link */
 
-/* MODAL FRAME */
-
-/* .frame {
-  position: fixed;
-  bottom: -100vh;
-  left: 0;
-  width: 87vw;
-  height: 90vh;
-  overflow: clip;
-  align-content: bottom;
+.darkmode {
+  cursor: pointer;
+  transition: transform .5s ease-in-out;
 }
+.darkmode:hover {
+  transform: rotate(180deg);
+}
+
+/* ******** */
+/* universal color switches */
+/* ******** */
+
+.darkswitch {
+  display: block;
+  background-color: white;
+  color: black;
+}
+.lightswitch {
+  display: none;
+  background-color: black;
+  color: white;
+}
+
+
+/* ******** */
+/* MODALS */
+/* ******** */
+
+/* ******** */
+/* modal & frame universal */
+
+.pagemodals {
+  border: inset purple 3px;
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  height: 88%;
+  overflow: hidden;
+}
+
+.modaltitle {
+  padding-left: 30px;
+  font-size: 1.6em;
+}
+
+/* ******** */
+/* work & frame modal */
+
+/* work frame */
+
 .workframe {
   display: none;
+  position: relative;
+  height: 100%;
+  width: 100%;
 }
-.bioframe {
-  display: none;
+.workframelight {
+  background-color: black;
 }
-.contactframe {
-  display: none;
+.workframedark {
+  background-color: seagreen;
 }
-.modal {
+
+/* work title */
+
+.modaltitle {
+  padding-left: 30px;
+  font-size: 1.6em;
+}
+.worktitlelight {
+  color: khaki;
+}
+.worktitledark {
+  color: white;
+}
+
+/* work close button */
+
+.workclose {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 87vw;
-  height: 90vh;
-  border-radius: 0 5px 0 0;
-}
-.close {
-  float: right;
-  font-size: 2rem;
-  padding: 1% 2%;
-  font-weight: 100;
+  top: -5px;
+  right: 15px;
+  font-size: 2em;
+  color: white;
   cursor: pointer;
 }
-.workcontent {
-  display: flex;
+
+/* work modal */
+
+.workmodal {
   position: absolute;
-  top: 0;
-  margin: 50px;
-  left: 0;
-  width: calc(100% - 100px);
-  height: calc(100% - 100px);
-  background-color: red;
+  left: 10px;
+  margin-top: -27px;
+  height: calc(100% - 77px);
+  width: calc(100% - 20px);
 }
-.biocontent {
-  display: flex;
-  position: absolute;
-  top: 0;
-  margin: 50px;
-  left: 0;
-  width: calc(100% - 100px);
-  height: calc(100% - 100px);
-  background-color: green;
+.workmodallight {
+  background-color: white;
+  color: black;
 }
-.contactcontent {
-  display: flex;
+.workmodaldark {
+  background-color: black;
+  color: white;
+}
+
+/* ******** */
+/* bio & frame modal */
+
+/* bio frame */
+
+.bioframe {
+  display: none;
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.bioframelight {
+  background-color: black;
+}
+.bioframedark {
+  background-color: seagreen;
+}
+
+/* bio title */
+
+.biotitlelight {
+  color: lightsalmon;
+}
+.biotitledark {
+  color: black;
+}
+
+/* bio close button */
+
+.bioclose {
   position: absolute;
-  top: 0;
-  margin: 50px;
-  left: 0;
-  width: calc(100% - 100px);
-  height: calc(100% - 100px);
-  background-color: blue;
-} */
+  top: -5px;
+  right: 15px;
+  font-size: 2em;
+  color: white;
+  cursor: pointer;
+}
+
+/* bio modal */
+
+.biomodal {
+  position: absolute;
+  left: 10px;
+  margin-top: -27px;
+  height: calc(100% - 77px);
+  width: calc(100% - 20px);
+}
+.biomodallight {
+  background-color: white;
+  color: black;
+}
+.biomodaldark {
+  background-color: black;
+  color: white;
+}
+
+/* ******** */
+/* contact & frame modal */
+
+/* contact frame */
+
+.contactframe {
+  display: none;
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.contactframelight {
+  background-color: black;
+}
+.contactframedark {
+  background-color: seagreen;
+}
+
+/* contact title */
+
+.contacttitlelight {
+  color: lightcoral;
+}
+.contacttitledark {
+  color: white;
+}
+
+/* contact close button */
+
+.contactclose {
+  position: absolute;
+  top: -5px;
+  right: 15px;
+  font-size: 2em;
+  color: white;
+  cursor: pointer;
+}
+
+/* contact modal */
+
+.contactmodal {
+  position: absolute;
+  left: 10px;
+  margin-top: -27px;
+  height: calc(100% - 77px);
+  width: calc(100% - 20px);
+}
+.contactmodallight {
+  background-color: white;
+  color: black;
+}
+.contactmodaldark {
+  background-color: black;
+  color: white;
+}
+
+/* ******** */
+/* MEDIA QUERIES */
+/* ******** */
+
+@media only screen and (max-width: 350px) {
+  .pagemodals {
+    width: 100%;  
+  }
+  .title {
+    margin-top: 5px;
+  }
+  .name {
+    font-size: 2.4em;
+  }
+  .jobtitle {
+    font-size: 1.4em;
+  }
+}
+@media only screen and (min-width: 351px) and (max-width: 600px) {
+  .pagemodals {
+    width: 100%;  
+  }
+  .title {
+    margin-top: 5px;
+  }
+  .name {
+    font-size: 2.8em;
+  }
+  .jobtitle {
+    font-size: 1.6em;
+  }
+}
+@media only screen and (min-width: 601px) and (max-width: 1200px) {
+  .pagemodals {
+    width: calc(100% - 70px);  
+  }
+  .title {
+    margin-top: 0px;
+  }
+  .name {
+    font-size: 2.8em;
+  }
+  .jobtitle {
+    font-size: 1.6em;
+  }
+}
+@media only screen and (min-width: 1201px) {
+  .pagemodals {
+    width: calc(100% - 70px);  
+  }
+  .title {
+    margin-top: 0px;
+  }
+  .name {
+    font-size: 3em;
+  }
+  .jobtitle {
+    font-size: 1.6em;
+  }
+}

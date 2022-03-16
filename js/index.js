@@ -1,7 +1,12 @@
-
-
 $(document).ready(function() {
 
+
+// ***************
+// ***************
+// ***VARIABLE LIBRARY***
+// ***************
+// ***************
+    
 var block = "block";
 var none = "none";
 
@@ -20,19 +25,33 @@ var space1open = "0%";
 var space2open = "45%";
 var space3open = "0%";
 
-// ***DARK MODE***
+var textmarginstart = "0px";
+var textmarginopen = "1600px";
 
-// function library
+// ***************
+// ***************
+// ***FUNCTION LIBRARY***
+// ***************
+// ***************
+
+// ***************
+// dark mode function library
+// ***************
 
 function godark() {
     $(".lightswitch").fadeIn(0);
     $(".darkswitch").fadeOut(0);
     $(".main").toggleClass("mainlight maindark");
     $(".linkedin").toggleClass("linkedinlight linkedindark");
-    $(".btn").toggleClass("btnlight btndark");
     $(".btnworklight").toggleClass("btnworklight btnworkdark");
     $(".btnbiolight").toggleClass("btnbiolight btnbiodark");
     $(".btncontactlight").toggleClass("btncontactlight btncontactdark");
+    $(".btnworklightclick").toggleClass("btnworklightclick btnworkdarkclick");
+    $(".btnbiolightclick").toggleClass("btnbiolightclick btnbiodarkclick");
+    $(".btncontactlightclick").toggleClass("btncontactlightclick btncontactdarkclick");
+    $(".workframe").toggleClass("workframelight workframedark");
+    $(".workmodal").toggleClass("workmodallight workmodaldark");
+    $(".worktitlelight").toggleClass("worktitlelight worktitledark");
 };
 
 function golight() {
@@ -42,22 +61,25 @@ function golight() {
     $(".main").toggleClass("maindark");
     $(".linkedin").toggleClass("linkedinlight");
     $(".linkedin").toggleClass("linkedindark");
-    $(".btn").toggleClass("btnlight btndark");
     $(".btnworkdark").toggleClass("btnworklight btnworkdark");
     $(".btnbiodark").toggleClass("btnbiolight btnbiodark");
     $(".btncontactdark").toggleClass("btncontactlight btncontactdark");
+    $(".btnworkdarkclick").toggleClass("btnworkdarkclick btnworklightclick");
+    $(".btnbiodarkclick").toggleClass("btnbiodarkclick btnbiolightclick");
+    $(".btncontactdarkclick").toggleClass("btncontactdarkclick btncontactlightclick");
+    $(".workframe").toggleClass("workframedark workframelight");
+    $(".workmodal").toggleClass("workmodaldark workmodallight");
+    $(".worktitledark").toggleClass("worktitledark worktitlelight");
 };
 
-// action switch
-
-$(".darkswitch").click(godark);
-$(".lightswitch").click(golight);
 
 
+// ***************
+// nav&links function library
+// ***************
 
-// ***MENU ANIMATIONS***
-
-// **function library
+// ***************
+// reset function
 
 function btnstostart() {
     $(".space1").animate({height: space1start},buttonspeed,"linear");
@@ -66,11 +88,26 @@ function btnstostart() {
     $(".btnwork").animate({width: btnwidthstart},buttonspeed,"linear");
     $(".btnbio").animate({width: btnwidthstart},buttonspeed,"linear");
     $(".btncontact").animate({width: btnwidthstart},buttonspeed,"linear");
-};
+    $(".workbtntext").fadeIn(buttonspeed,"linear");
+    $(".biobtntext").fadeIn(buttonspeed,"linear");
+    $(".contactbtntext").fadeIn(buttonspeed,"linear");
+}
 
-// work btn
+function btnstostartshort() {
+    $(".btnwork").animate({width: btnwidthstart},buttonspeed,"linear");
+    $(".btnbio").animate({width: btnwidthstart},buttonspeed,"linear");
+    $(".btncontact").animate({width: btnwidthstart},buttonspeed,"linear");
+    $(".workbtntext").fadeIn(buttonspeed,"linear");
+    $(".biobtntext").fadeIn(buttonspeed,"linear");
+    $(".contactbtntext").fadeIn(buttonspeed,"linear");
+}
 
-function btnworkactive() {
+// ***************
+// work button functions
+
+// add selection color work button
+
+function btnworkcolor() {
     if ($(".darkswitch").css("display") == block) {
         $(".btnwork").addClass("btnworklightclick");
     }
@@ -78,6 +115,9 @@ function btnworkactive() {
         $(".btnwork").addClass("btnworkdarkclick");
     }
 };
+
+// reset color work button
+
 function btnworkcolorreset() {
     if ($(".darkswitch").css("display") == block) {
         $(".btnwork").removeClass("btnworklightclick");
@@ -86,6 +126,9 @@ function btnworkcolorreset() {
         $(".btnwork").removeClass("btnworkdarkclick");
     }
 };
+
+// activate work button
+
 function btnstoworkopen() {
     $(".space1").animate({height: space1open},buttonspeed,"linear");
     $(".space3").animate({height: space3open},buttonspeed,"linear");
@@ -93,11 +136,38 @@ function btnstoworkopen() {
     $(".btnwork").animate({width: btnwidthopened},buttonspeed,"linear");
     $(".btnbio").animate({width: btnwidthclosed},buttonspeed,"linear");
     $(".btncontact").animate({width: btnwidthclosed},buttonspeed,"linear");
+    $(".biobtntext").fadeOut(buttonspeed,"linear");
+    $(".contactbtntext").fadeOut(buttonspeed,"linear");
 };
 
-// bio btn
+function btnstoworkopenshort() {
+    $(".btnwork").animate({width: btnwidthopened},buttonspeed,"linear");
+    $(".btnbio").animate({width: btnwidthclosed},buttonspeed,"linear");
+    $(".btncontact").animate({width: btnwidthclosed},buttonspeed,"linear");
+    $(".biobtntext").fadeOut(buttonspeed,"linear");
+    $(".contactbtntext").fadeOut(buttonspeed,"linear");
+}
 
-function btnbioactive() {
+// activate work modal
+
+function workmodalopen() {
+    $(".workframe").fadeIn();
+    $(".pagemodals").animate({bottom: "0"},buttonspeed,"linear");
+};
+
+// close work modal
+
+function workmodalclose() {
+    $(".pagemodals").animate({bottom: "-100%"},buttonspeed,"linear");
+    $(".workframe").delay(buttonspeed).fadeOut();
+};
+
+// ***************
+// bio button functions
+
+// add selection color bio button
+
+function btnbiocolor() {
     if ($(".darkswitch").css("display") == block) {
         $(".btnbio").addClass("btnbiolightclick");
     }
@@ -105,6 +175,9 @@ function btnbioactive() {
         $(".btnbio").addClass("btnbiodarkclick");
     }
 };
+
+// reset color bio button
+
 function btnbiocolorreset() {
     if ($(".darkswitch").css("display") == block) {
         $(".btnbio").removeClass("btnbiolightclick");
@@ -113,6 +186,9 @@ function btnbiocolorreset() {
         $(".btnbio").removeClass("btnbiodarkclick");
     }
 };
+
+// activate bio button
+
 function btnstobioopen() {
     $(".space1").animate({height: space1open},buttonspeed,"linear");
     $(".space3").animate({height: space3open},buttonspeed,"linear");
@@ -120,10 +196,38 @@ function btnstobioopen() {
     $(".btnwork").animate({width: btnwidthclosed},buttonspeed,"linear");
     $(".btnbio").animate({width: btnwidthopened},buttonspeed,"linear");
     $(".btncontact").animate({width: btnwidthclosed},buttonspeed,"linear");
+    $(".workbtntext").fadeOut(buttonspeed,"linear");
+    $(".contactbtntext").fadeOut(buttonspeed,"linear");
 };
 
-// contact btn
-function btncontactactive() {
+function btnstobioopenshort() {
+    $(".btnwork").animate({width: btnwidthclosed},buttonspeed,"linear");
+    $(".btnbio").animate({width: btnwidthopened},buttonspeed,"linear");
+    $(".btncontact").animate({width: btnwidthclosed},buttonspeed,"linear");
+    $(".workbtntext").fadeOut(buttonspeed,"linear");
+    $(".contactbtntext").fadeOut(buttonspeed,"linear");
+}
+
+// activate bio modal
+
+function biomodalopen() {
+    $(".bioframe").fadeIn();
+    $(".pagemodals").animate({bottom: "0"},buttonspeed,"linear");
+};
+
+// close bio modal
+
+function biomodalclose() {
+    $(".pagemodals").animate({bottom: "-100%"},buttonspeed,"linear");
+    $(".bioframe").delay(buttonspeed).fadeOut();
+};
+
+// ***************
+// contact button functions
+
+// add selection color contact button
+
+function btncontactcolor() {
     if ($(".darkswitch").css("display") == block) {
         $(".btncontact").addClass("btncontactlightclick");
     }
@@ -131,6 +235,8 @@ function btncontactactive() {
         $(".btncontact").addClass("btncontactdarkclick");
     }
 };
+
+// reset color contact button
 function btncontactcolorreset() {
     if ($(".darkswitch").css("display") == block) {
         $(".btncontact").removeClass("btncontactlightclick");
@@ -139,6 +245,8 @@ function btncontactcolorreset() {
         $(".btncontact").removeClass("btncontactdarkclick");
     }
 };
+
+// activate contact button
 function btnstocontactopen() {
     $(".space1").animate({height: space1open},buttonspeed,"linear");
     $(".space3").animate({height: space3open},buttonspeed,"linear");
@@ -146,71 +254,175 @@ function btnstocontactopen() {
     $(".btnwork").animate({width: btnwidthclosed},buttonspeed,"linear");
     $(".btnbio").animate({width: btnwidthclosed},buttonspeed,"linear");
     $(".btncontact").animate({width: btnwidthopened},buttonspeed,"linear");
+    $(".workbtntext").fadeOut(buttonspeed,"linear");
+    $(".biobtntext").fadeOut(buttonspeed,"linear");
 };
 
-
-
-
-
-function colorreturn() {
-    if ($(".darkswitch").css("display") == block) {
-        $(".btnwork").removeClass("btnworklightclick");
-        $(".btnbio").removeClass("btnbiolightclick");
-        $(".btncontact").removeClass("btncontactlightclick");
-    }
-    else {
-        $(".btnwork").removeClass("btnworkdarkclick");
-        $(".btnbio").removeClass("btnbiodarkclick");
-        $(".btncontact").removeClass("btncontactdarkclick");
-    }
+function btnstobioopenshort() {
+    $(".btnwork").animate({width: btnwidthclosed},buttonspeed,"linear");
+    $(".btnbio").animate({width: btnwidthclosed},buttonspeed,"linear");
+    $(".btncontact").animate({width: btnwidthopened},buttonspeed,"linear");
+    $(".workbtntext").fadeOut(buttonspeed,"linear");
+    $(".biobtntext").fadeOut(buttonspeed,"linear");
 }
 
+// activate contact modal
+
+function contactmodalopen() {
+    $(".contactframe").fadeIn();
+    $(".pagemodals").animate({bottom: "0"},buttonspeed,"linear");
+};
+
+// close contact modal
+
+function contactmodalclose() {
+    $(".pagemodals").animate({bottom: "-100%"},buttonspeed,"linear");
+    $(".contactframe").delay(buttonspeed).fadeOut();
+};
+
+// ***************
+// modal function library
+// ***************
 
 
 
 
+// ***************
+// ***************
+// ***EVENT TRIGGERS***
+// ***************
+// ***************
 
+// ***************
+// dark mode event triggers
+// ***************
 
-// menu events
+$(".darkswitch").click(godark);
+$(".lightswitch").click(golight);
+
+// ***************
+// navigation event triggers
+// ***************
+
+// ***************
+// work button event triggers
 
 $(".btnwork").click(function() {
-    if ($(".btnwork").css("width") == btnwidthstart || $(".btnwork").css("width") == btnwidthclosed) {
+    if ($(".btnwork").css("width") == btnwidthstart) {
         btnstoworkopen();
-        btnworkactive();
+        btnworkcolor();
+        workmodalopen();
+    }
+    else if ($(".btnwork").css("width") == btnwidthclosed && $(".btnbio").css("width") == btnwidthopened) {
+        biomodalclose();
+        btnstostartshort();
+        btnbiocolorreset();
+        btnstoworkopenshort();
+        btnworkcolor();
+        workmodalopen();
+    }
+    else if ($(".btnwork").css("width") == btnwidthclosed && $(".btncontact").css("width") == btnwidthopened) {
+        contactmodalclose();
+        btnstostartshort();
+        btncontactcolorreset();
+        btnstoworkopenshort();
+        btnworkcolor();
+        workmodalopen();
     }
     else {
+        workmodalclose();
         btnstostart();
         btnworkcolorreset();
     }
 });
 
+// ***************
+// bio button event triggers
+
 $(".btnbio").click(function() {
-    if ($(".btnbio").css("width") == btnwidthstart || $(".btnbio").css("width") == btnwidthclosed) {
+    if ($(".btnbio").css("width") == btnwidthstart) {
         btnstobioopen();
-        btnbioactive();
+        btnbiocolor();
+        biomodalopen();
+    }
+    else if ($(".btnbio").css("width") == btnwidthclosed && $(".btnwork").css("width") == btnwidthopened) {
+        workmodalclose();
+        btnstostartshort();
+        btnworkcolorreset();
+        btnstobioopenshort();
+        btnbiocolor();
+        biomodalopen();
+    }
+    else if ($(".btnbio").css("width") == btnwidthclosed && $(".btncontact").css("width") == btnwidthopened) {
+        contactmodalclose();
+        btnstostartshort();
+        btncontactcolorreset();
+        btnstobioopenshort();
+        btnbiocolor();
+        biomodalopen();
     }
     else {
+        biomodalclose();
         btnstostart();
         btnbiocolorreset();
     }
 });
 
+// ***************
+// contact button event triggers
+
 $(".btncontact").click(function() {
-    if ($(".btncontact").css("width") == btnwidthstart || $(".btncontact").css("width") == btnwidthclosed) {
+    if ($(".btncontact").css("width") == btnwidthstart) {
         btnstocontactopen();
-        btncontactactive();
+        btncontactcolor();
+        contactmodalopen();
+    }
+    else if ($(".btncontact").css("width") == btnwidthclosed && $(".btnwork").css("width") == btnwidthopened) {
+        workmodalclose();
+        btnstostartshort();
+        btnworkcolorreset();
+        btnstocontactopenshort();
+        btncontactcolor();
+        contactmodalopen();
+    }
+    else if ($(".btncontact").css("width") == btnwidthclosed && $(".btnbio").css("width") == btnwidthopened) {
+        biomodalclose();
+        btnstostartshort();
+        btnbiocolorreset();
+        btnstocontactopenshort();
+        btncontactcolor();
+        contactmodalopen();
     }
     else {
+        contactmodalclose();
         btnstostart();
         btncontactcolorreset();
     }
 });
 
+// ***************
+// close button event triggers
 
-
-
+$(".workclose").click(function() {
+    btnstostart();
+    btnworkcolorreset();
+    workmodalclose();
 });
 
+$(".bioclose").click(function() {
+    btnstostart();
+    btnbiocolorreset();
+    biomodalclose();
+});
+
+$(".contactclose").click(function() {
+    btnstostart();
+    btncontactcolorreset();
+    contactmodalclose();
+});
+
+});
+// ^ document close
 
 
 
@@ -225,169 +437,8 @@ $(".btncontact").click(function() {
 
 
 
-// // MAIN CLOSE Function
 
-// function close() {
-//         $("nav").animate({top:"50vh"},700);
 
-//         $(".frame").animate({bottom: "-100vh"},700);
-
-//         $(".workframe").delay(700).fadeOut(0);
-//         $(".bioframe").delay(700).fadeOut(0);
-//         $(".contactframe").delay(700).fadeOut(0);
-
-//         $(".siteheader").animate({bottom:"50vh"},700);
-//         $("#jobtitle").animate({fontSize: "120%",right:"30vw"})
-//         $("#name").animate({fontSize: "3rem",right:"30vw"},700);
-//         $("#linkgroup").animate({lineHeight: "3rem",right:"30vw"},700);
-
-//         $(".btnwork, .btnbio, .btncontact").delay(600).animate({width: btnwidthstart},300);
-//         $(".btntext").delay(600).animate({left: "71vw"},300);
-// };
-
-// // BUTTON Functions
-
-// // WORK BUTTON
-
-// function workopen() {
-//     $(".btnwork").animate({width: btnwidthopened},300);
-
-//     $(".btntext").animate({left: "90vw"},300);
-
-//     $(".btnbio").animate({width: btnwidthclosed},300);
-//     $(".btncontact").animate({width: btnwidthclosed},300);
-
-//     $(".siteheader").delay(300).animate({bottom: "90vh"},700);
-//     $("#jobtitle").delay(300).animate({fontSize: "0%"})
-//     $("#name").delay(300).animate({fontSize: "100%", left: "1vw"},700);
-//     $("#linkgroup").delay(300).animate({lineHeight: "2.5rem", right: "13vw"},700);
-
-//     $(".workframe").fadeIn(0);
-//     $(".workframe").delay(300).animate({bottom: "0vh"},700);
-
-//     $("nav").delay(300).animate({top: "15vh"},700)
-// };
-// function quickwork() {
-//     $(".btnbio, .btncontact").animate({width: btnwidthclosed},200);
-//     $(".btnwork").animate({width: btnwidthopened},200);
-
-//     $(".frame").delay(200).animate({bottom: "-100vh"},300);
-//     $(".bioframe").delay(200).fadeOut(0);
-//     $(".contactframe").delay(200).fadeOut(0);
-
-//     $(".workframe").fadeIn(0);
-//     $(".workframe").animate({bottom: "0vh"},300);
-// };
-
-// // BIO BUTTON
-
-// function bioopen() {
-//     $(".btnbio").animate({width: btnwidthopened},300);
-
-//     $(".btntext").animate({left: "90vw"},300);
-
-//     $(".btnwork").animate({width: btnwidthclosed},300);
-//     $(".btncontact").animate({width: btnwidthclosed},300);
-
-//     $(".siteheader").delay(300).animate({bottom: "90vh", right: "13vw"},700);
-//     $("#jobtitle").delay(300).animate({fontSize: "0%"})
-//     $("#name").delay(300).animate({fontSize: "100%"},700);
-//     $("#linkgroup").delay(300).animate({lineHeight: "2.5rem"},700);
-
-//     $(".bioframe").fadeIn(0);
-//     $(".bioframe").delay(300).animate({bottom: "0vh"},700);
-
-//     $("nav").delay(300).animate({top: "15vh"},700)
-// };
-// function quickbio() {
-//     $(".btnwork, .btncontact").animate({width: btnwidthclosed},200);
-//     $(".btnbio").animate({width: btnwidthopened},200);
-
-//     $(".frame").delay(200).animate({bottom: "-100vh"},300);
-//     $(".workframe").delay(200).fadeOut(0);
-//     $(".contactframe").delay(200).fadeOut(0);
-
-//     $(".bioframe").fadeIn(0);
-//     $(".bioframe").animate({bottom: "0vh"},300);
-// };
-
-// // CONTACT BUTTON
-
-// function contactopen() {
-//     $(".btncontact").animate({width: btnwidthopened},300);
-
-//     $(".btntext").animate({left: "90vw"},300);
-
-//     $(".btnwork").animate({width: btnwidthclosed},300);
-//     $(".btnbio").animate({width: btnwidthclosed},300);
-
-//     $(".siteheader").delay(300).animate({bottom: "90vh", right: "13vw"},700);
-//     $("#jobtitle").delay(300).animate({fontSize: "0%"})
-//     $("#name").delay(300).animate({fontSize: "100%"},700);
-//     $("#linkgroup").delay(300).animate({lineHeight: "2.5rem"},700);
-
-//     $(".contactframe").fadeIn(0);
-//     $(".contactframe").delay(300).animate({bottom: "0vh"},700);
-
-//     $("nav").delay(300).animate({top: "15vh"},700)
-// };
-// function quickcontact() {
-//     $(".btnwork, .btnbio").animate({width: btnwidthclosed},200);
-//     $(".btncontact").animate({width: btnwidthopened},200);
-
-//     $(".frame").delay(200).animate({bottom: "-100vh"},300);
-//     $(".workframe").delay(200).fadeOut(0);
-//     $(".bioframe").delay(200).fadeOut(0);
-
-//     $(".contactframe").fadeIn(0);
-//     $(".contactframe").animate({bottom: "0vh"},300);
-// };
-
-// // CLOSE Click
-
-// $(".close").click(close);
-
-// // WORK BUTTON Clicks
-
-// $(".btnwork").click(function() {
-//     if ($(".workframe").css("display") == opened) {
-//         close();
-//     }
-//     else if ($(".workframe").css("display") == closed && ($(".bioframe").css("display") == opened || $(".contactframe").css("display") == opened)) {
-//         quickwork();
-//     }
-//     else if ($(".workframe").css("display") == closed && $(".bioframe").css("display") == closed && $(".contactframe").css("display") == closed) {
-//         workopen();
-//     }
-// });
-
-// // BIO BUTTON Clicks
-
-// $(".btnbio").click(function() {
-//     if ($(".bioframe").css("display") == opened) {
-//         close();
-//     }
-//     else if ($(".bioframe").css("display") == closed && ($(".workframe").css("display") == opened || $(".contactframe").css("display") == opened)) {
-//         quickbio();
-//     }
-//     else if ($(".bioframe").css("display") == closed && $(".workframe").css("display") == closed && $(".contactframe").css("display") == closed) {
-//         bioopen();
-//     }
-// });
-
-// // CONTACT BUTTON Clicks
-
-// $(".btncontact").click(function() {
-//     if ($(".contactframe").css("display") == opened) {
-//         close();
-//     }
-//     else if ($(".contactframe").css("display") == closed && ($(".workframe").css("display") == opened || $(".bioframe").css("display") == opened)) {
-//         quickcontact();
-//     }
-//     else if ($(".contactframe").css("display") == closed && $(".workframe").css("display") == closed && $(".bioframe").css("display") == closed) {
-//         contactopen();
-//     }
-// });
 
 
 
