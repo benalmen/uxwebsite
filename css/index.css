@@ -138,7 +138,7 @@ nav {
   color: khaki;
   background-color: black;
 }
-.btnworklightclick {
+.btnworklighton {
   color: khaki;
   background-color: black;
 }
@@ -154,7 +154,7 @@ nav {
   color: black;
   background-color: seagreen;
 }
-.btnworkdarkclick {
+.btnworkdarkon {
   color: black;
   background-color: seagreen;
 }
@@ -173,7 +173,7 @@ nav {
   color: lightsalmon;
   background-color: black;
 }
-.btnbiolightclick {
+.btnbiolighton {
   color: lightsalmon;
   background-color: black;
 }
@@ -189,7 +189,7 @@ nav {
   color: black;
   background-color: royalblue;
 }
-.btnbiodarkclick {
+.btnbiodarkon {
   color: black;
   background-color: royalblue;
 }
@@ -208,7 +208,7 @@ nav {
   color: lightcoral;
   background-color: black;
 }
-.btncontactlightclick {
+.btncontactlighton {
   color: lightcoral;
   background-color: black;
 }
@@ -224,7 +224,7 @@ nav {
   color: black;
   background-color: slateblue;
 }
-.btncontactdarkclick {
+.btncontactdarkon {
   color: black;
   background-color: slateblue;
 }
